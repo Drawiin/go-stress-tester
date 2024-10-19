@@ -23,6 +23,7 @@ package cmd
 
 import (
 	"fmt"
+	"go-stress-tester/internal/presentation"
 	"go-stress-tester/internal/usecase"
 	"os"
 
@@ -43,7 +44,7 @@ var rootCmd = &cobra.Command{
 			Requests:    requests,
 			Concurrency: concurrency,
 		})
-		fmt.Println("Result:", result)
+		fmt.Println(presentation.NewReportBuilder().BuildPresentableReport(result))
 	},
 }
 

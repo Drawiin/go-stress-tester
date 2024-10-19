@@ -7,8 +7,8 @@ type ConfigDto struct {
 }
 
 type ResultDto struct {
-	TotalExecutionTime  float64
-	TotalRequests       int
-	SuccessFullRequests map[int]int
-	ErrorRequests       map[int]int
+	TotalExecutionTimeInMilliseconds int64
+	TotalRequests                    int
+	SuccessFullRequests              map[int]int
+	ErrorRequests                    map[int]int
 }

@@ -1,7 +1,6 @@
 package infra
 
 import (
-	"fmt"
 	"net/http"
 	"strings"
 )
@@ -22,8 +21,7 @@ func (n *NetworkClientImpl) DoRequest(url string) (int, error) {
 	}
 	resp, err := http.Get(url)
 	if err != nil && resp == nil {
-		fmt.Println("Error:", err)
-		return 0, err
+		return -1, err
 	}
 	defer resp.Body.Close()
 	return resp.StatusCode, nil
