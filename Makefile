@@ -7,4 +7,7 @@ build-img:
 run-img:
 	docker run -it --rm vini65599/go-stress-test:latest --url="http://google.com.br" --requests=50 --concurrency=8
 
-.PHONY: build-img run-img
+run-from-hub:
+	docker run -it --rm --pull always vini65599/go-stress-test:latest --url="http://google.com.br" --requests=50 --concurrency=8
+
+.PHONY: build-img run-img run run-from-hub
